@@ -254,22 +254,37 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown("""
-<div class="footer">
-    <div class="footer-container">
 
-        <div class="footer-links">
-            <span>Contact</span>
-            <span>Careers</span>
-            <span>Privacy Policy</span>
-            <span>Terms & Conditions</span>
-        </div>
 
-        <div class="footer-brand">
-            <h2>TenderMind AI</h2>
-            <div class="footer-gap"></div>
-            <p>© 2026 TenderMind AI. All rights reserved.</p>
+# ------------------ FOOTER ------------------
+st.markdown("---")
+
+col1, col2 = st.columns([3, 2])
+
+with col1:
+    st.markdown(
+        """
+        **Contact** | **Careers** | **Privacy Policy** | **Terms & Conditions**
+        """
+    )
+
+with col2:
+    st.markdown(
+        """
+        <div style="text-align:right;">
+            <div style="font-size:26px; font-weight:800; color:#3b0764;">
+                TenderMind AI
+            </div>
+
+            <div style="height:10px;"></div>
+
+            <div style="font-size:14px; color:gray;">
+                © 2026 TenderMind AI. All rights reserved.
+            </div>
         </div>
+        """,
+        unsafe_allow_html=True
+    ) 
 
     </div>
 </div>
