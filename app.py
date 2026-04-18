@@ -4,7 +4,7 @@ import time
 # ------------------ CONFIG ------------------
 st.set_page_config(page_title="TenderMind AI", layout="centered")
 
-# ------------------ STYLE ------------------
+# ------------------ GLOBAL STYLE ------------------
 st.markdown("""
 <style>
 
@@ -22,26 +22,26 @@ st.markdown("""
 }
 
 .hero h1 {
-    font-size: 42px;
-    font-weight: 800;
+    font-size: 46px;
+    font-weight: 900;
     color: #3b0764;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .hero p {
-    font-size: 16px;
+    font-size: 17px;
     color: #555;
 }
 
-/* UPLOADER */
+/* FILE UPLOADER */
 div[data-testid="stFileUploader"] {
     background: white;
-    padding: 25px;
-    border-radius: 15px;
+    padding: 28px;
+    border-radius: 16px;
     border: 2px dashed #a855f7;
     width: 90%;
-    max-width: 500px;
-    margin: 20px auto;
+    max-width: 520px;
+    margin: 25px auto;
     transition: 0.3s;
 }
 
@@ -53,19 +53,70 @@ div[data-testid="stFileUploader"]:hover {
 /* RESULT BOX */
 .result-box {
     width: 90%;
-    max-width: 500px;
+    max-width: 520px;
     margin: 20px auto;
     background: white;
-    padding: 20px;
-    border-radius: 12px;
+    padding: 22px;
+    border-radius: 14px;
     box-shadow: 0px 5px 20px rgba(0,0,0,0.08);
 }
 
-/* MOBILE OPTIMIZATION */
+/* FOOTER */
+.footer {
+    width: 100%;
+    padding: 50px 20px;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    margin-top: 60px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 900px;
+    margin: auto;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* LINKS */
+.footer-links {
+    font-size: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    color: #444;
+}
+
+/* BRAND */
+.footer-brand {
+    text-align: right;
+    min-width: 220px;
+}
+
+.footer-brand h2 {
+    font-size: 30px;
+    font-weight: 900;
+    color: #3b0764;
+    margin: 0;
+}
+
+/* BIG GAP */
+.footer-gap {
+    height: 12px;
+}
+
+.footer-brand p {
+    font-size: 14px;
+    color: gray;
+    margin: 0;
+}
+
+/* MOBILE */
 @media (max-width: 768px) {
 
     .hero h1 {
-        font-size: 30px;
+        font-size: 32px;
     }
 
     .hero p {
@@ -73,10 +124,23 @@ div[data-testid="stFileUploader"]:hover {
     }
 
     div[data-testid="stFileUploader"] {
-        padding: 15px !important;
+        padding: 18px !important;
         width: 95% !important;
     }
 
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-brand {
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
 }
 
 </style>
@@ -91,12 +155,16 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ------------------ UPLOAD ------------------
-uploaded_file = st.file_uploader("Upload your tender document", type=["png", "jpg", "jpeg", "pdf"])
+uploaded_file = st.file_uploader(
+    "Upload your tender document",
+    type=["png", "jpg", "jpeg", "pdf"]
+)
 
 # ------------------ FAKE AI ------------------
 def fake_ai():
     with st.spinner("Analyzing document..."):
         time.sleep(2)
+
     return [
         ("Revenue Check", "✅ Pass"),
         ("Safety Certificate", "❌ Fail"),
@@ -117,30 +185,23 @@ if uploaded_file:
     st.markdown('</div>', unsafe_allow_html=True)
 
 # ------------------ FOOTER ------------------
-st.markdown("---")
+st.markdown("""
+<div class="footer">
+    <div class="footer-container">
 
-col1, col2 = st.columns([2, 1])
-
-with col1:
-    st.markdown(
-        """
-        <div style='font-size:14px;'>
-        Contact &nbsp;&nbsp;&nbsp; 
-        Careers &nbsp;&nbsp;&nbsp; 
-        Privacy Policy &nbsp;&nbsp;&nbsp; 
-        Terms and Conditions
+        <div class="footer-links">
+            <span>Contact</span>
+            <span>Careers</span>
+            <span>Privacy Policy</span>
+            <span>Terms & Conditions</span>
         </div>
-        """,
-        unsafe_allow_html=True
-    )
 
-with col2:
-    st.markdown(
-        """
-        <div style='text-align:right; line-height:1.4;'>
-            <div style='font-size:18px; font-weight:600;'>TenderMind AI</div>
-            <div style='font-size:12px; color:gray;'>© 2026 tendermind</div>
+        <div class="footer-brand">
+            <h2>TenderMind AI</h2>
+            <div class="footer-gap"></div>
+            <p>© 2026 TenderMind AI. All rights reserved.</p>
         </div>
-        """,
-        unsafe_allow_html=True
-    )
+
+    </div>
+</div>
+""", unsafe_allow_html=True)
