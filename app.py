@@ -133,24 +133,14 @@ if uploaded_file:
     st.markdown('</div>', unsafe_allow_html=True)
 
 # ------------------ FOOTER ------------------
+# ------------------ FOOTER ------------------
 st.markdown("---")
 
 col1, col2 = st.columns([3, 2])
 
 with col1:
-    st.markdown(
-        "Contact | Careers | Privacy Policy | Terms & Conditions"
-    )
+    st.markdown("Contact | Careers | Privacy Policy | Terms & Conditions")
 
 with col2:
-    st.markdown("""
-        <div style="text-align:right;">
-            <div class="footer-title">TenderMind AI</div>
-
-            <div style="height:10px;"></div>
-
-            <div class="footer-text">
-                © 2026 TenderMind AI. All rights reserved.
-            </div>
-        </div>
-    """, unsafe_allow_html=True)
+    st.markdown("### TenderMind AI")
+    st.caption("© 2026 TenderMind AI. All rights reserved.")
