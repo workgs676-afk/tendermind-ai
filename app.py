@@ -143,4 +143,4 @@ with col1:
 
 with col2:
     st.markdown("### TenderMind AI")
-    st.caption("© 2026 TenderMind AI. All rights reserved.")
+    st.caption("© 2026 tendermind.  All rights reserved.")
