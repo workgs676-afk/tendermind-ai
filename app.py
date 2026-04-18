@@ -185,6 +185,75 @@ if uploaded_file:
     st.markdown('</div>', unsafe_allow_html=True)
 
 # ------------------ FOOTER ------------------
+# ------------------ FOOTER ------------------
+st.markdown("<br><br><br>", unsafe_allow_html=True)
+
+st.markdown("""
+<style>
+.footer {
+    width: 100%;
+    padding: 50px 20px;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    margin-top: 60px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 900px;
+    margin: auto;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-links {
+    font-size: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    color: #444;
+}
+
+.footer-brand {
+    text-align: right;
+    min-width: 220px;
+}
+
+.footer-brand h2 {
+    font-size: 30px;
+    font-weight: 900;
+    color: #3b0764;
+    margin: 0;
+}
+
+.footer-gap {
+    height: 12px;
+}
+
+.footer-brand p {
+    font-size: 14px;
+    color: gray;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .footer-brand {
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
+}
+</style>
+""", unsafe_allow_html=True)
+
 st.markdown("""
 <div class="footer">
     <div class="footer-container">
@@ -204,4 +273,4 @@ st.markdown("""
 
     </div>
 </div>
-""", unsafe_allow_html=True)
+""", unsafe_allow_html=True) 
