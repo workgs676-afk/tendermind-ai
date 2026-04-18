@@ -22,26 +22,26 @@ st.markdown("""
 }
 
 .hero h1 {
-    font-size: 46px;
+    font-size: 44px;
     font-weight: 900;
     color: #3b0764;
     margin-bottom: 10px;
 }
 
 .hero p {
-    font-size: 17px;
+    font-size: 16px;
     color: #555;
 }
 
 /* FILE UPLOADER */
 div[data-testid="stFileUploader"] {
     background: white;
-    padding: 28px;
-    border-radius: 16px;
+    padding: 25px;
+    border-radius: 15px;
     border: 2px dashed #a855f7;
     width: 90%;
     max-width: 520px;
-    margin: 25px auto;
+    margin: 20px auto;
     transition: 0.3s;
 }
 
@@ -56,67 +56,29 @@ div[data-testid="stFileUploader"]:hover {
     max-width: 520px;
     margin: 20px auto;
     background: white;
-    padding: 22px;
-    border-radius: 14px;
+    padding: 20px;
+    border-radius: 12px;
     box-shadow: 0px 5px 20px rgba(0,0,0,0.08);
 }
 
-/* FOOTER */
-.footer {
-    width: 100%;
-    padding: 50px 20px;
-    border-top: 1px solid rgba(0,0,0,0.08);
-    margin-top: 60px;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    max-width: 900px;
-    margin: auto;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
-/* LINKS */
-.footer-links {
-    font-size: 15px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 18px;
-    color: #444;
-}
-
-/* BRAND */
-.footer-brand {
-    text-align: right;
-    min-width: 220px;
-}
-
-.footer-brand h2 {
-    font-size: 30px;
-    font-weight: 900;
+/* FOOTER TEXT */
+.footer-title {
+    font-size: 22px;
+    font-weight: 800;
     color: #3b0764;
-    margin: 0;
+    margin-bottom: 8px;
 }
 
-/* BIG GAP */
-.footer-gap {
-    height: 12px;
-}
-
-.footer-brand p {
+.footer-text {
     font-size: 14px;
     color: gray;
-    margin: 0;
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
 
     .hero h1 {
-        font-size: 32px;
+        font-size: 30px;
     }
 
     .hero p {
@@ -124,22 +86,8 @@ div[data-testid="stFileUploader"]:hover {
     }
 
     div[data-testid="stFileUploader"] {
-        padding: 18px !important;
         width: 95% !important;
-    }
-
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .footer-brand {
-        text-align: center;
-    }
-
-    .footer-links {
-        justify-content: center;
+        padding: 18px !important;
     }
 }
 
@@ -185,107 +133,24 @@ if uploaded_file:
     st.markdown('</div>', unsafe_allow_html=True)
 
 # ------------------ FOOTER ------------------
-# ------------------ FOOTER ------------------
-st.markdown("<br><br><br>", unsafe_allow_html=True)
-
-st.markdown("""
-<style>
-.footer {
-    width: 100%;
-    padding: 50px 20px;
-    border-top: 1px solid rgba(0,0,0,0.08);
-    margin-top: 60px;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    max-width: 900px;
-    margin: auto;
-    flex-wrap: wrap;
-    gap: 30px;
-}
-
-.footer-links {
-    font-size: 15px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 18px;
-    color: #444;
-}
-
-.footer-brand {
-    text-align: right;
-    min-width: 220px;
-}
-
-.footer-brand h2 {
-    font-size: 30px;
-    font-weight: 900;
-    color: #3b0764;
-    margin: 0;
-}
-
-.footer-gap {
-    height: 12px;
-}
-
-.footer-brand p {
-    font-size: 14px;
-    color: gray;
-    margin: 0;
-}
-
-@media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-    }
-
-    .footer-brand {
-        text-align: center;
-    }
-
-    .footer-links {
-        justify-content: center;
-    }
-}
-</style>
-""", unsafe_allow_html=True)
-
-
-
-# ------------------ FOOTER ------------------
 st.markdown("---")
 
 col1, col2 = st.columns([3, 2])
 
 with col1:
     st.markdown(
-        """
-        **Contact** | **Careers** | **Privacy Policy** | **Terms & Conditions**
-        """
+        "Contact | Careers | Privacy Policy | Terms & Conditions"
     )
 
 with col2:
-    st.markdown(
-        """
+    st.markdown("""
         <div style="text-align:right;">
-            <div style="font-size:26px; font-weight:800; color:#3b0764;">
-                TenderMind AI
-            </div>
+            <div class="footer-title">TenderMind AI</div>
 
             <div style="height:10px;"></div>
 
-            <div style="font-size:14px; color:gray;">
+            <div class="footer-text">
                 © 2026 TenderMind AI. All rights reserved.
             </div>
         </div>
-        """,
-        unsafe_allow_html=True
-    ) 
-
-    </div>
-</div>
-""", unsafe_allow_html=True) 
+    """, unsafe_allow_html=True)
